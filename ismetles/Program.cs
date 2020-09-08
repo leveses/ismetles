@@ -6,7 +6,7 @@ namespace ismetles
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
         }
     }
 }
