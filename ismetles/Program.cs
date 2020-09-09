@@ -4,6 +4,21 @@ namespace ismetles
 {
     class Program
     {
+        static void EredmenyKiiras(int gep, int ember)
+        {
+            switch (EmberNyer(gep, ember))
+            {
+                case 0:
+                    Console.WriteLine("Döntetlen");
+                    break;
+                case 1:
+                    Console.WriteLine("Gép nyert");
+                    break;
+                case 2:
+                    Console.WriteLine("Játékos nyert");
+                    break;
+            }
+        }
         static int EmberNyer(int gep, int ember)
         {
             if (ember == gep) //döntetlen
@@ -30,19 +45,8 @@ namespace ismetles
             int ember =  int.Parse(Console.ReadLine());
             Console.WriteLine("Játékos válastztása: {0}",lehetoseg[ember]);
             Console.WriteLine("Gép választása: {0}",lehetoseg[gep]);
-            Console.WriteLine("Gép: {0} --- Játéswswswwsswwskos {1}",lehetoseg[gep], lehetoseg[ember]);
-            switch (EmberNyer(gep,ember))
-            {
-                case 0:
-                    Console.WriteLine("Döntetlen");
-                    break;
-                case 1:
-                    Console.WriteLine("Gép nyert");
-                    break;
-                case 2:
-                    Console.WriteLine("Játékos nyert");
-                    break;
-            }
+            Console.WriteLine("Gép: {0} --- Játékos {1}",lehetoseg[gep], lehetoseg[ember]);
+            EredmenyKiiras(gep, ember);
             Console.ReadKey();
         }
     }
