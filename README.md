@@ -8,3 +8,4 @@
 	- A papír legyőzi a követ.
 	- Az olló legyőzi a papírt.
 - [x] Kiírjuk az eredményt.
+- [ ] Nyerés új metódusba
