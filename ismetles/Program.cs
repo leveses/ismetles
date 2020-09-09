@@ -10,54 +10,22 @@ namespace ismetles
             string[] lehetoseg = new string[]{ "Kő", "Papír", "Olló"};
             int gepValasz = vel.Next(0,3);
 
-            //Console.WriteLine("Gép választása: {0}",lehetoseg[gepValasz]);
+            
             Console.WriteLine("Kő: 0, Papír: 1, Olló: 2");
             int jatekosV =  int.Parse(Console.ReadLine());
             Console.WriteLine("Játékos válastztása: {0}",lehetoseg[jatekosV]);
-            if (gepValasz == 0)
+            Console.WriteLine("Gép választása: {0}",lehetoseg[gepValasz]);
+            if (jatekosV == gepValasz) //döntetlen
             {
-                if (jatekosV == 0)
-                {
-                    Console.WriteLine("Döntetlen");
-                }
-                if (jatekosV == 1)
-                {
-                    Console.WriteLine("A játékos győzött");
-                }
-                if (jatekosV == 2)
-                {
-                    Console.WriteLine("A számítógép győzött");
-                }
+                Console.WriteLine("Döntetlen");
             }
-            if (gepValasz == 1)
+            else if (gepValasz == 0 && jatekosV == 2 || gepValasz == 1 && jatekosV == 0 || gepValasz == 2 && jatekosV == 1) //gép nyer
             {
-                if (jatekosV == 0)
-                {
-                    Console.WriteLine("A számítógép győzött");
-                }
-                if (jatekosV == 1 && gepValasz == 1)
-                {
-                    Console.WriteLine("Döntetlen");
-                }
-                if (jatekosV == 2)
-                {
-                    Console.WriteLine("A játékos győzött");
-                }
+                Console.WriteLine("Számítógép nyer");
             }
-            if (gepValasz == 2)
+            else // játékos nyer
             {
-                if (jatekosV == 0)
-                {
-                    Console.WriteLine("A játékos győzött");
-                }
-                if (jatekosV == 1)
-                {
-                    Console.WriteLine("A számítógép győzött");
-                }
-                if (jatekosV == 2 && gepValasz == 2)
-                {
-                    Console.WriteLine("Döntetlen");
-                }
+                Console.WriteLine("Játékos nyer");
             }
             Console.ReadKey();
         }
