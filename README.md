@@ -8,4 +8,7 @@
 	- A papír legyőzi a követ.
 	- Az olló legyőzi a papírt.
 - [x] Kiírjuk az eredményt.
-- [ ] Nyerés új metódusba
+- [x] Nyerés új metódusba
+
+## Játékmenet 2.0
+- Addig játszunk míg ki nem lépünk

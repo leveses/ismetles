@@ -46,19 +46,38 @@ namespace ismetles
                 return 2;
             }
         }
+        private static bool AkarJatszni()
+        {
+            Console.WriteLine("------------------------------------");
+            Console.WriteLine("Szeretnél még tovább játszani? [i/n]");
+            string valasz = Console.ReadLine().ToLower();
+            Console.WriteLine("------------------------------------");
+            if (valasz == "i")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            //throw new NotImplementedException();
+        }
         static void Main(string[] args)
         {
 
-
-            int gep = GepValasztas();
-            int ember = JatekosValaszt();
-            
-            
-            Console.WriteLine("Játékos válastztása: {0}",lehetoseg[ember]);
-            Console.WriteLine("Gép választása: {0}",lehetoseg[gep]);
-            
-            EredmenyKiiras(gep, ember);
-            Console.ReadKey();
+            bool tovabb = true;
+            while (tovabb)
+            {
+                int gep = GepValasztas();
+                int ember = JatekosValaszt();
+                Console.WriteLine("Játékos válastztása: {0}", lehetoseg[ember]);
+                Console.WriteLine("Gép választása: {0}", lehetoseg[gep]);
+                EredmenyKiiras(gep, ember);
+               
+                tovabb = AkarJatszni();
+            }
         }
+
+        
     }
 }
