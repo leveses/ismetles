@@ -13,3 +13,7 @@
 ## Játékmenet 2.0
 - Addig játszunk míg ki nem lépünk
 - Statisztika
+- Fájlba írás és megjelenítés
+     - 1 érték --> menet
+     - 2 érték --> játékos
+     - 3 érték --> gép

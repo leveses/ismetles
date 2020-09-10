@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace ismetles
 {
@@ -73,6 +74,7 @@ namespace ismetles
         
         static void Main(string[] args)
         {
+            StatisztikaFajlbol();
 
             bool tovabb = true;
             while (tovabb)
@@ -87,6 +89,19 @@ namespace ismetles
                 tovabb = AkarJatszni();
                 StatisztikaKiiras();
             }
+        }
+
+        private static void StatisztikaFajlbol()
+        {
+            StreamReader stat = new StreamReader("Statisztika.txt");
+            while (!stat.EndOfStream)
+            {
+                string sor = stat.ReadLine();
+                Console.WriteLine(sor);
+
+            }
+            stat.Close();
+            Console.WriteLine("------------->Statisztika vége<-------------");
         }
 
         private static void StatisztikaKiiras()
