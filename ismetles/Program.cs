@@ -94,11 +94,17 @@ namespace ismetles
         private static void StatisztikaFajlbol()
         {
             StreamReader stat = new StreamReader("Statisztika.txt");
+            int x = 0;
             while (!stat.EndOfStream)
             {
-                string sor = stat.ReadLine();
-                Console.WriteLine(sor);
-
+                string[] sor = stat.ReadLine().Split(';');
+                int[] adat = new int[3];
+                for (int i = 0; i < adat.Length; i++)
+                {
+                    adat[i] = int.Parse(sor[i]);
+                    Console.Write(adat[i]+ " ");
+                }
+                Console.WriteLine();
             }
             stat.Close();
             Console.WriteLine("------------->Statisztika vége<-------------");
