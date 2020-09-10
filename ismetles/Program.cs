@@ -10,6 +10,7 @@ namespace ismetles
         static int gepNyer = 0;
         static int jatekosNyer = 0;
         static int menet = 0;
+        static int[] adat = new int[3];
 
         static int GepValasztas()
         {
@@ -88,7 +89,21 @@ namespace ismetles
                
                 tovabb = AkarJatszni();
                 StatisztikaKiiras();
+                FajlbaIras();
             }
+        }
+
+        private static void FajlbaIras()
+        {
+            StreamWriter ir = new StreamWriter("Statisztika.txt",true);
+            
+            for (int i = 0; i < adat.Length; i++)
+            {
+                ir.Write(adat[i] + " ");
+                Console.WriteLine();
+            }
+            ir.Close();
+            
         }
 
         private static void StatisztikaFajlbol()
@@ -98,7 +113,7 @@ namespace ismetles
             while (!stat.EndOfStream)
             {
                 string[] sor = stat.ReadLine().Split(';');
-                int[] adat = new int[3];
+                
                 for (int i = 0; i < adat.Length; i++)
                 {
                     adat[i] = int.Parse(sor[i]);
@@ -109,6 +124,7 @@ namespace ismetles
             stat.Close();
             Console.WriteLine("------------->Statisztika vége<-------------");
         }
+
 
         private static void StatisztikaKiiras()
         {
