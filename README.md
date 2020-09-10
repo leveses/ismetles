@@ -12,3 +12,4 @@
 
 ## Játékmenet 2.0
 - Addig játszunk míg ki nem lépünk
+- Statisztika

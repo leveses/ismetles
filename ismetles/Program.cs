@@ -5,6 +5,11 @@ namespace ismetles
     class Program
     {
         static string[] lehetoseg = new string[] { "Kő", "Papír", "Olló" };
+
+        static int gepNyer = 0;
+        static int jatekosNyer = 0;
+        static int menet = 0;
+
         static int GepValasztas()
         {
             Random vel = new Random();
@@ -39,10 +44,12 @@ namespace ismetles
             }
             else if (gep == 0 && ember == 2 || gep == 1 && ember == 0 || gep == 2 && ember == 1) //gép nyer
             {
+                gepNyer++;
                 return 1;
             }
             else // játékos nyer
             {
+                jatekosNyer++;
                 return 2;
             }
         }
@@ -62,12 +69,15 @@ namespace ismetles
             }
             //throw new NotImplementedException();
         }
+        
+        
         static void Main(string[] args)
         {
 
             bool tovabb = true;
             while (tovabb)
             {
+                menet++;
                 int gep = GepValasztas();
                 int ember = JatekosValaszt();
                 Console.WriteLine("Játékos válastztása: {0}", lehetoseg[ember]);
@@ -75,9 +85,15 @@ namespace ismetles
                 EredmenyKiiras(gep, ember);
                
                 tovabb = AkarJatszni();
+                StatisztikaKiiras();
             }
         }
 
-        
+        private static void StatisztikaKiiras()
+        {
+            Console.WriteLine("Menetek száma: {0}" +
+                "\tJátékos győzelmeinek száma: {1}"
+                + "\tGép győzelmeinek száma: {2}",menet,jatekosNyer,gepNyer);
+        }
     }
 }
