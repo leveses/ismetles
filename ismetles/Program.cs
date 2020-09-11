@@ -93,15 +93,13 @@ namespace ismetles
             }
         }
 
-        private static void FajlbaIras()
+        private static void FajlbaIras() //nem működik valamiért
         {
-            StreamWriter ir = new StreamWriter("Statisztika.txt",true);
-            
-            for (int i = 0; i < adat.Length; i++)
-            {
-                ir.Write(adat[i] + " ");
-                Console.WriteLine();
-            }
+            string adat = menet.ToString() + ";" +
+                jatekosNyer.ToString() + ";" +
+                gepNyer.ToString();
+            StreamWriter ir = new StreamWriter("Statisztika.txt", true);
+            ir.WriteLine(adat);
             ir.Close();
             
         }
@@ -117,9 +115,8 @@ namespace ismetles
                 for (int i = 0; i < adat.Length; i++)
                 {
                     adat[i] = int.Parse(sor[i]);
-                    Console.Write(adat[i]+ " ");
+                    Console.WriteLine(adat[i]+ " ");
                 }
-                Console.WriteLine();
             }
             stat.Close();
             Console.WriteLine("------------->Statisztika vége<-------------");
